@@ -1,0 +1,33 @@
+<study>
+	<head>html标签列表</head>
+	<content>
+		<!--..-->定义注释
+		<!DOCTYPE>定义文档类型
+		<a href="">定义超链接</a>
+		<abbr title="这里是需要被缩写的内容">定义缩写</abbr>
+		<address>定义文档作者或拥有者的信息</address>
+		<area shape="" coords="" href="" alt="">定义图像映射内部的内容，不单独使用，始终嵌套在<map name=""></map>内部
+		<article>定义一个文章区域</article>
+		<aside>定义页面的侧边栏内容</aside>
+		<audio src="">定义音频内容</audio>
+		<!--分割线-->
+		<b>定义粗体</b>
+		<base href="">定义页面所有连接的默认地址或目标
+		<bdi>隔离，允许设置一段文本，使其脱离父元素的文本方向的设置；在发布评论或者其他无法控制的内容时候很有用</bdi>
+		<bdo dir="">定义文本方向</bdo>
+		<blockquote>定义长的引用，浏览器会对其进行缩进</blockquote>
+		<body>
+			都懂的
+		</body>
+		<br>都懂的
+		<button>定义一个按钮，只是一个按钮</button>
+		<!--分割线-->
+		<canvas>定义图形，比如表格或其他图像，标签只是图形容器，必须使用脚本绘制图像</canvas>
+		<caption>定义表格的标题</caption>
+		<cite>定义引用</cite>
+		<code>定义计算机代码文本</code>
+		<col>定义表格中一个或多个列的属性值
+		<colgroup>定义表格中格式化的列组</colgroup>
+		<command>定义命令按钮
+	</content>
+</study>

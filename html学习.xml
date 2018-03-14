@@ -1,5 +1,11 @@
-<html不是编程语言,html是标记语言/>
+<html不是编程语言而是标记语言/>
+<html>
+	超文本标记语言	hyper text markup language
+</html>
 <html基础>
+<step1>
+	2013-03-14
+</step1>
 <html全局变量>
 	<accesskey 设置访问元素的键盘快捷键>
 		<element accesskey="character">character:指定激活元素的快捷键</element>
@@ -52,4 +58,5 @@
 		</dropzone>
 	</主流浏览器不支持>
 </html全局变量>
+
 </html基础>
