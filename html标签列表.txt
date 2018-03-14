@@ -3,7 +3,7 @@
 	<content>
 		<!--..-->定义注释
 		<!DOCTYPE>定义文档类型
-		<a href="">定义超链接</a>
+		<a href="">定义超链接，属性值targt=“_blank”，连接将在新窗口打开</a>
 		<abbr title="这里是需要被缩写的内容">定义缩写</abbr>
 		<address>定义文档作者或拥有者的信息</address>
 		<area shape="" coords="" href="" alt="">定义图像映射内部的内容，不单独使用，始终嵌套在<map name=""></map>内部
