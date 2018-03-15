@@ -3,6 +3,7 @@
 	<content>
 		<!--..-->定义注释
 		<!DOCTYPE>定义文档类型
+		<!--A分割线-->
 		<a href="">定义超链接，属性值targt=“_blank”，连接将在新窗口打开</a>
 		<abbr title="这里是需要被缩写的内容">定义缩写</abbr>
 		<address>定义文档作者或拥有者的信息</address>
@@ -10,9 +11,9 @@
 		<article>定义一个文章区域</article>
 		<aside>定义页面的侧边栏内容</aside>
 		<audio src="">定义音频内容</audio>
-		<!--分割线-->
+		<!--B分割线-->
 		<b>定义粗体</b>
-		<base href="">定义页面所有连接的默认地址或目标
+		<base href="">定义页面所有连接的默认地址或目标，定义在<head></head>中可简化其他链接的书写
 		<bdi>隔离，允许设置一段文本，使其脱离父元素的文本方向的设置；在发布评论或者其他无法控制的内容时候很有用</bdi>
 		<bdo dir="">定义文本方向</bdo>
 		<blockquote>定义长的引用，浏览器会对其进行缩进</blockquote>
@@ -21,7 +22,7 @@
 		</body>
 		<br>都懂的
 		<button>定义一个按钮，只是一个按钮</button>
-		<!--分割线-->
+		<!--B分割线-->
 		<canvas>定义图形，比如表格或其他图像，标签只是图形容器，必须使用脚本绘制图像</canvas>
 		<caption>定义表格的标题</caption>
 		<cite>定义引用</cite>
@@ -29,5 +30,35 @@
 		<col>定义表格中一个或多个列的属性值
 		<colgroup>定义表格中格式化的列组</colgroup>
 		<command>定义命令按钮
+		<!--D分割线-->
+		<datalist>
+			在input中使用list属性来绑定datalist标签，选项使用<option value=""></option>
+		</datalist>
+		<dd>
+			自定义列表
+			<dl>
+				<dt>
+					<dd></dd>
+				</dt>
+			</dl>
+		</dd>
+		<del>文本中间一根线</del>
+		<detalis>
+			可以定义可见或者隐藏的补充细节
+			元素内容对用户不可见的，除非设置open属性
+		</detalis>
+		<dfn>定义项目,样式改变了,还不如用CSS</dfn>
+		<dialog>定义一个对话框,确认框或者窗口</dialog>
+		<div>重点,块级元素</div>
+		<!--E分割线-->
+		<embed src="" type="">定义一个容器，用来嵌入外部插件
+		<!--F分割线-->
+		<filedset>定义围绕表单的中元素的边框</filedset>
+		<figure></figure>定义一个独立的流内容，该元素的删除对主内容不会有影响，但是该内容应该跟准内容有关
+		<figcaption></figcaption>该标签为figure元素定义标题，该标签需位于figure的第一个或者最后一个子元素位置
+		<footer>定义页脚,一个文档中可以定义多个footer元素</footer>
+		<form action="">表单</form>
+		<frameset>定义框架集</frameset>
+		<frame>定义框架集的窗口
 	</content>
 </study>

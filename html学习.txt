@@ -1,0 +1,68 @@
+<html>html学习</html>
+<content>
+	<day1>
+		<one>
+			返回顶部可以直接使用<a href="#top">返回顶部</a>
+			锚点，需要先定义一个锚点<a name="test">锚点</a>
+			然后定义一个连接点<a href="#test">返回锚点</a>
+		</one>
+		<two>
+			<title/>标签是必须的
+			<meta>一些有用的东西
+			<meta name="keywords" content="html,CSS,XML,JAVASCRIPT">定义搜索引擎关键字
+			<meta name="descripttion" content="为网页定义描述内容">
+			<meta name="author" content="定义网页作者">
+			<meta name="" http-equiv="refresh" content="30">定义网页每三十秒自动刷新
+		</two>
+		<three>
+			CSS层叠样式表,HTML4.0引入
+			CSS计入html的方法:
+				1.内联样式 在html元素中使用style属性
+				特殊样式应用的个别元素的时候推荐使用
+				个别元素使用内联样式 比如<a href=""></a>在内联样式表中无法实现删除下划线，但是使用内联样式的时候可以
+				2.内联样式表 在head中使用<style>元素来包夹CSS</style>
+				<style type="text/css">CSS内容</style>
+				3.外部样式 使用外部CSS文件
+				<link rel="stylesheet" href="文件位置">
+		</three>
+		<four>
+			块级元素:书写完成后可以自动换行，并且有宽度和高度，包括但不限于:
+			div、p、h1~h6、table、ol、ul、li
+			行内元素(内联元素):书写完成后不会自动换行，并且元素没有宽和高，包括但不限于:
+			span、img、a、output、meter
+		</four>
+	</day1>
+	<day2>
+		<one>
+			d、e、f开头的标签初识
+		</one>
+		<two>
+		<!--划重点,表单-->
+			form表单学习,手动写在test.html
+			<label for=""></label>辅助input用的
+			select optgroup option 互相结合使用效果很赞
+			<input type="text">几个type:
+			text:文本输入
+			password:密码
+			radio:单选
+			checkbox:复选框
+			reset:重置
+			submit:提交
+			range:进度条
+			number:数字框
+		</two>
+		<three>
+			框架
+			定义一个内联的框架,该框架内可以显示一个超连接的页面,但是要求超链接的目标属性必须跟iframe的那么相对应
+			<iframe src="" frameborder="0" name=""></iframe>
+		</three>
+		<four>
+			颜色值与颜色名
+		</four>
+		<!--重点！JS-->
+		<five>
+			script与noscript
+		</five>
+		<six>转义字符</six>
+	</day2>
+</content>
