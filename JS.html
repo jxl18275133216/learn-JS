@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8" http-equiv="refresh" content="30">
+	<script>
+		function changeP1(){
+			var p1 = document.getElementById("test p1");
+			if(p1.innerHTML=="测试用段落,点击修改"){
+				p1.innerHTML="内容已修改";
+			}else if(p1.innerHTML=="内容已修改"){
+				p1.innerHTML="我又变了";
+			}else{
+				p1.innerHTML="你来打我啊";
+			}
+			
+		}
+		//测试var与let,我去
+		function letAndVar(){
+			let a = 1;
+			if(true){
+				let a = 2;
+				alert(a);//输出 2
+			}
+			alert(a);//输出1
+		}
+		//点击获取当前事件
+		function getDate(){
+			var date = document.getElementById("datedemo");
+			date.innerHTML = Date();
+		}
+	</script>
+	<title>JS练习用</title>
+</head>
+<body>
+	<p id="test p1">测试用段落,点击修改</p>
+	<input type="button" id="test b1" onclick="changeP1()" value="点击">
+	<br>
+	<h4>测试var 和 let 的区别</h4>
+	<button onclick="letAndVar()">点击测试</button>
+	<h4>测试单击事件,获取当前时间</h4>
+	<button onclick="getDate()">现在时间是:</button>
+	<p id="datedemo"></p>
+	<h4>JS事件</h4>
+	<h4>单击事件</h4>
+	<h4>鼠标右键事件</h4>
+	<div id="div1" style="width:200px;height:200px;background:yellow" oncontextmenu="div1()">
+		<p>在该区域点鼠标右键</p>
+	</div>
+	<script>
+		function div1(){
+			//alert('你在div区域点击了鼠标右键');
+			var div1 = document.getElementById('div1');
+			div1.style.backgroundColor= "red";
+		}
+	</script>
+	<h4>鼠标移动事件一</h4>
+	<div id="div2" style="width:200px;height:200px;background:yellow" onmouseenter="into()" onmouseleave="outo()">
+		<p>在该区域进行鼠标移进移出操作</p>
+	</div>
+	<script>
+		function into(){
+			//alert("鼠标移进");
+			var div2 = document.getElementById("div2");
+			div2.style.backgroundColor="red";
+		}
+		function outo(){
+			//alert(111111111);
+			var div2 = document.getElementById("div2");
+			div2.style.backgroundColor="yellow";
+		}
+	</script>
+	<h4>鼠标移动事件二</h4>
+	<div id="div3" style="width:200px;height:200px;background:yellow" onmousemove="theMove(this)">
+		<p>在该区域进行鼠标移动操作</p>
+	</div>
+	<script>
+		function theMove(event){
+			//alert("鼠标移动");
+			event.style.backgroundColor="red";
+		}
+	</script>
+</body>
+</html>

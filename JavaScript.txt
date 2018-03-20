@@ -1,0 +1,26 @@
+<JavaScript>
+	<day1>
+		显示数据
+		windows.alert();弹出警告框
+		document.write();将内容写在html文档中
+		innerHTML写入到html元素中
+		console.log()写入到浏览器的控制台
+	</day1>
+	<day2>
+		<one>
+			let变量,let声明的变量只在其声明的块域或子块中可用,let与var 区别见测试文件
+			同一个function 中不能同时存在let和var,否则function不能执行
+			let可以简化函数内部代码
+		</one>
+		<two>
+			1.js中的数据类型有:
+			string、number、boolean、array、object、null、undefined
+			2.变量:
+			js中变量分全局变量和局部变量
+			变量的声明周期都是从它们被声明时开始，局部变量会在函数执行完毕后被删除，全局变量则是网页被关闭之后被删除
+			如果一个未被声明的变量被赋值，该变量会自动成为全局变量，哪怕它是在函数中执行的
+			3.js作用域:
+			4.js事件
+		</two>
+	</day2>
+</JavaScript>
