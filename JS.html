@@ -79,5 +79,26 @@
 			event.style.backgroundColor="red";
 		}
 	</script>
+	<h4>标签的使用</h4>
+	<script>
+		outerloop:
+		for(var i = 0;i<10;i++){
+			
+			innerloop:
+			for(var j = 0;j<10;j++){
+				if(j==2){
+					continue innerloop;
+				}
+				if(j==4){
+					break innerloop;
+				}
+				if(i>6){
+					break outerloop;
+				}
+				document.write("i="+i+";j="+j+"<br/>");
+			}
+			document.write("i="+i+"<br/>");
+		}
+	</script>
 </body>
 </html>

@@ -21,6 +21,15 @@
 			如果一个未被声明的变量被赋值，该变量会自动成为全局变量，哪怕它是在函数中执行的
 			3.js作用域:
 			4.js事件
+			5.== 和===
+			6.js运算和比较、逻辑运算
+			7.标签引用
+				通过给一个语句加标签，就可以给这个语句加一个名字，这样在程序任何地方都可以调用这个名字来使用该语句
+			8.null、undefined的区别
+			typeof null      //object
+			typeof undefined //undefined
+			null===undefined //false
+			null==undefined //true
 		</two>
 	</day2>
 </JavaScript>
