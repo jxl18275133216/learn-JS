@@ -100,5 +100,121 @@
 			document.write("i="+i+"<br/>");
 		}
 	</script>
+	<h4>
+		演示if...else if的运用
+	</h4>
+	<script>
+		var day = new Date();
+		var time = day.getHours();
+		//alert(time);
+		if(time<=9){
+			document.write("早上好");
+		}else if(time>9&&time<17){
+			document.write("中午好");
+		}else{
+			document.write("下午好");
+		}
+	</script>
+	<h4>演示switch case</h4>
+	<span>今天是<p id="swtichtest"></p></span>
+	<script>
+		var day = new Date();
+		var today = day.getDay();
+		var span = document.getElementById("swtichtest");
+		//alert(today);
+		switch(today){
+			case 0:
+				span.innerHTML = "星期天";
+				break;
+				
+			case 1:
+				span.innerHTML = "星期一";
+				break;
+			case 2:
+				span.innerHTML = "星期二";
+				break;
+			case 3:
+				span.innerHTML = "星期三";
+				break;
+			case 4:
+				span.innerHTML = "星期四";
+				break;
+			case 5:
+				span.innerHTML = "星期五";
+				break;
+			case 6:
+				span.innerHTML = "星期六";
+				break;
+		}
+	</script>
+	<h4>
+		测试年龄
+	</h4>
+	<p>输入你的出生年份:<input type="text" id="datetest"></p>
+	<p><button onclick="brithday()">开始计算</button></p>
+	你今年已经<input id="result"></input>
+	<script>
+		var p1 = document.getElementById("datetest");
+		var p2 = document.getElementById("result");
+		function brithday(){
+			var date = new Date();
+			var brithday = date.getFullYear()-p1.value;
+			//alert(date.getFullYear());
+			//alert(brithday);
+			p2.value = brithday+"岁";	
+		}
+	</script>
+	<h4>演示try...catch</h4>
+	<button onclick="errortest()">点击显示</button>
+	<script>
+		function errortest(){
+			try{
+				alerttttttt("test  error");
+			}catch(error){
+				alert(error.message);
+			}
+		}
+	</script>
+	<h4>throw控制流程</h4>
+	<input type="text" value="输入一个0-100的值" id="input">
+	<br>
+	<button onclick="test()">测试</button>
+	<br>
+	<p id="test1"></p>
+	<script>
+		function test(){
+		//alert(11111);
+			var input = document.getElementById("input").value;
+			alert(input);
+			var p = document.getElementById("test1");
+			p.innerHTML = "";
+			//p.innerHTML = "111111111111";
+			try{
+				if(input=="")throw "空的";
+				if(isNaN(input))throw "不是数字";
+				input=Number(input);
+				if(input<0)throw "小了";
+				if(input>100)throw "大了";
+			}catch(error){
+				p.innerHTML = error;
+			}
+		}
+	</script>
+	<h4>JS函数</h4>	
+	<p id="demo1"></p>
+	<script>
+		var p =document.getElementById("demo1");
+		var x = function(a,b){return a*b};
+		p.innerHTML = x(1,4,3,1);
+	</script>
+	
+	
+	
+	
+	
+	
+	
+	
+	
 </body>
 </html>

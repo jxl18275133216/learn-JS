@@ -13,8 +13,8 @@
 			let可以简化函数内部代码
 		</one>
 		<two>
-			1.js中的数据类型有:
-			string、number、boolean、array、object、null、undefined
+			//1.js中的数据类型有:
+			//string、number、boolean、array、object、null、undefined
 			2.变量:
 			js中变量分全局变量和局部变量
 			变量的声明周期都是从它们被声明时开始，局部变量会在函数执行完毕后被删除，全局变量则是网页被关闭之后被删除
@@ -32,4 +32,53 @@
 			null==undefined //true
 		</two>
 	</day2>
+	<day3>
+		<one>
+			JS的数据类型:
+			五种数据类型:string、number、boolean、object、function
+			三种对象类型:Object、Date、Array
+			二中不包含值的数据类型:null undefined
+			typeof 和 instanceof
+		</one>
+		<two>
+			正则表达式，我不会，我没有
+		</two>
+		<three>
+			try...catch 以及throw
+		</three>
+		<four>
+			JS中，函数及变量的声明都将被提升到函数的最顶部
+			js中，变量可以在使用后声明
+			js中分号不是必须得，js会自动在完成的语句后面添加一个分号，但是，这样可能会导致代码运行的结果与预期不符，所以最好手动显示的添加分号
+		</four>
+		<five>
+			表单验证
+			1.使用function return false
+			2.自动验证 required="required"
+			数据验证
+		</five>
+		<six>
+			JSON:
+			一种轻量级的数据交换格式，数据是键值对，数据有逗号分隔，大括号保存对象，方括号保存数组
+		</six>
+		<seven>
+			javascript:void();
+			void()仅仅代表不返回任何值，但是里面的表达式还是会执行
+			void()指定要计算一个表达式但是不会返回任何值
+		</seven>
+	</day3>
+	JS函数
+	<day4>
+		<one>
+			function
+		</one>
+		<two>
+			HTML DOM
+		</two>
+		<three>
+			JS对象:
+			博大精深，学不动啊
+		</three>
+		
+	</day4>
 </JavaScript>
