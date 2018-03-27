@@ -82,7 +82,30 @@
 	</day4>
 	<day5>
 		<one>
-			
+			浏览器对象
+			screen、location()、history(历史信息)、Navigator(包含有关者访问浏览器的信息)
+			screen.availWidth;screen.availHeight;
+			location.hostname;location.port;location.protocol;
+			navigator数据可以被使用者修改
 		</one>
+		<two>
+			弹窗
+			alert()——警告框
+			confirm()——确认框
+			prompt()——提示框
+		</two>
+		<three>
+			计时器事件
+			setInterval(function,milliseconds);——第一个参数是函数，第二个参数是时间间隔
+			setTimeout(function,milliseconds);——第一个参数是函数，第二个参数是等待时间
+		</three>
+		<four>
+			cookie
+			document.cookie;——以键值对的形式返回所有的cookie
+			创建cookie
+			document.cookie = "键值对形式内容";
+			删除cookie
+			document.cookie = "需要删除的cookie键值对;expries = '以前的时间";
+		</four>
 	</day5>
 </JavaScript>

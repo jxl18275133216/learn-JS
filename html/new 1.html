@@ -2,6 +2,7 @@
 <html>
 	<head>
 		<meta charset="utf-8">
+		<link rel="stylesheet" href="./animate.css">
 		<title>学习第一天</title>
 	</head>
 	<body>
@@ -29,5 +30,25 @@
 		<p title="演示1">演示1</p>
 		<p title="演示2">演示2</p>
 		<p>第一个html页面?才怪</p>
+		<div class="animate " id="animate">
+			测试用文字
+		</div>
+		<button onclick="testAnimate()">点击测试css</button>
+		<button onclick="yincang()">隐藏</button>
+		<script>
+			function testAnimate(){
+				var test = document.getElementById("animate");
+				if(test.className == 'animated pulse'){
+					test.className = 'animate';
+				}else{
+					test.className = 'animated pulse';
+				}
+				
+			}
+			function yincang(){
+				var test = document.getElementById('animate');
+				test.setAttribute('display','none');
+			}
+		</script>
 	</body>
 </html>

@@ -1,0 +1,31 @@
+1.创建maven项目
+注:在src/main/webapps/下生产WEB-INF和META-INF文件夹
+
+2.右键项目
+properties/Deployment Assembly/
+移除
+/src/test/java
+/src/test/resources
+/WebContent
+这三项是不需要部署出去的；
+然后Add，选择Folder，选择/src/main/webapp,点击Finish完成
+
+3.整合mysql
+首先下载依赖jar包
+
+在mysql中新建数据库
+emp
+新建表
+employee
+
+CREATE TABLE `employee` (
+  `ID` int(10) NOT NULL COMMENT 'ID',
+  `NAME` varchar(10) NOT NULL COMMENT '姓名',
+  `AGE` int(1) NOT NULL DEFAULT '20' COMMENT '年龄',
+  `SEX` int(3) NOT NULL DEFAULT '0' COMMENT '性别：0女，1男',
+  `POSITION` varchar(24) DEFAULT NULL COMMENT '职位',
+  PRIMARY KEY (`ID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+
+创建实体类 entities

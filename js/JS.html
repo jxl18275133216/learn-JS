@@ -265,5 +265,128 @@
 			select1.innerHTML = "<option>四川</option>";
 		}
 	</script>
+	<h3>几个浏览器对象</h3>
+	<h4>screen对象</h4>
+	<button id="demoscreen" onclick="DemoScreen()">点击出现screen对象事件</button>
+	<script>
+		function DemoScreen(){
+			var screen = document.getElementById("demoscreen");
+			alert("当前屏幕宽度:"+window.screen.availWidth+"\n当前屏幕高度:"+window.screen.availHeight);
+		}
+	</script>
+	<h4>location对象</h4>
+	<button id="DemoLocation" onclick="DemoLocation()">点击出现location对象事件</button>
+	<script>
+		function DemoLocation(){
+			var location = document.getElementById('DemoLocation');
+			alert('WEB主机域名:'+window.location.hostname+'\n当前页面的路径:'+window.location.pathname+'\n当前页面的URL:'+window.location.href);
+		}
+	</script>
+	<h4>history对象</h4>
+	<button id="DemoHistory" onclick="DemoBack()">上一个页面</button>
+	<button id="DemoHistory" onclick="DemoForward()">下一个页面</button>
+	<script>
+		function DemoBack(){
+			window.history.back();
+		}
+		function DemoForward(){
+			window.history.forward();
+		}
+	</script>
+	<h3>弹窗</h3>
+	<h4>警告框alert</h4>
+	<button id='DemoAlert' onclick='DemoAlert()'>警告框</button>
+	<script>
+		function DemoAlert(){
+			alert('你好,这是警告框!')
+		}
+	</script>
+	<h4>确认框confirm</h4>
+	<button id='DemoConfirm' onclick='DemoConfirm()'>警告框</button>
+	<script>
+		function DemoConfirm(){
+			var x = confirm('TO BE OR NOT TO BE');
+			if(x==true){
+				alert('YES');
+			}else{
+				alert('???');
+			}
+		}
+	</script>
+	<h4>提示框</h4>
+	<button id='DemoPrompt' onclick='DemoPrompt()'>提示框</button>
+	<script>
+		function DemoPrompt(){
+			var x = prompt('你渴望什么');
+			alert(x+'?我TM也想要!');
+		}
+	</script>
+	<h3>计时器事件</h3>
+	<h4>setInterval</h4>
+	<p id='DemoSetInterval'> </p>
+	<button id='goTime' onclick='GoTime()'>开始</button>
+	<button id='stopTime' onclick='StopTime()'>停止</button>
+	<script>
+		var myTime;
+		function GoTime(){
+			myTime = window.setInterval(function(){
+				var time = new Date();
+				var x = time.toLocaleTimeString();
+				var p =document.getElementById('DemoSetInterval');
+				p.innerHTML = x;
+			},1000);
+		}
+		function StopTime(){
+			clearInterval(myTime);
+		}
+	</script>
+	<h4>setTimeout</h4>
+	<p id='DemoSetTimeout'></p>
+	<button id='' onclick='sendE()'>发送</button>
+	<button id='' onclick='stopE()'>中断</button>
+	<script>
+		/*var myE;
+		function sendE(){
+			myTime = window.setTimeout(function(){
+				var p =document.getElementById('DemoSetTimeout');
+				p.innerHTML = '邮件发送成功';
+			},5000);
+		}
+		function stopE(){
+			clearTimeout(myE);
+			var p =document.getElementById('DemoSetTimeout');
+				p.innerHTML = '邮件终止发送';
+		}*/
+		//下面这个不需要中断按钮
+		function sendE(){
+			var x = confirm('正在发送邮件,是否中止...');
+			var p = document.getElementById('DemoSetTimeout');
+			if(x == false){
+				setTimeout(function(){
+					p.innerHTML = '已发送';	
+				},5000);
+			}else{
+				p.innerHTML = '已中止';
+			}
+		}
+		
+		
+		
+	</script>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 </body>
 </html>
