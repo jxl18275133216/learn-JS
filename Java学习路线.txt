@@ -1,0 +1,12 @@
+基础:Java、jsp
+进阶:SQL、MySQL
+高级:正则表达式、Mongodb、AJAX、JSON、XML
+
+
+
+
+
+
+
+2018/03/27进度
+Java基础略懂，需要加强
