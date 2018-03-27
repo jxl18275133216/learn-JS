@@ -207,14 +207,63 @@
 		var x = function(a,b){return a*b};
 		p.innerHTML = x(1,4,3,1);
 	</script>
+	<h4>JS创建对象之一</h4>
+	<script>
+		var person= new Object();
+		person.name="jiashuai";
+		person.sex="man";
+		person.age="30";
+		//alert(person);
+		document.write(person.name+person.sex+person.age);
+	</script>
+	<h4>JS创建对象之二</h4>
+	<script>
+		function person(name,sex,age){
+			this.name = name;
+			this.sex = sex;
+			this.age = age;
+		}
+		var boy = new person("jiashuai","boy","30");
+		var gril = new person("nvshen","gril","20");
+		console.log(boy+gril);
+		//alert(boy);
+	</script>
+	<h4>for...in循环</h4>
+	<script>
+		var person = {name:"jiashuai",sex:"boy",age:"30"};
+		var txt = "";
+		for(x in person){
+			txt += person[x];
+		}
+		document.write(txt);
+	</script>
 	
-	
-	
-	
-	
-	
-	
-	
-	
+	<h4>数组对象</h4>
+	<script>
+		var array = new Array();
+		array[0] = new Date();
+		array[1] = "";
+		array[2] = 123;
+		array[3] = null;
+		for(i in array){
+			document.write(array[i]+"<br>");
+		}
+	</script>
+	<h4>下拉框</h4>
+	<select name="" id="a1" onchange="addOption()">
+		<option value="">选择省份</option>
+	</select>
+	<select name="" id="a2">
+		<option value="">选择城市</option>
+	</select>
+	<script>
+		var 四川 = new Array("成都","南充","绵阳");
+		var 北京 = ["北狗","京狗","北京狗"];
+		function addOption(){
+			var select1 = document.getElementById("a1");
+			var select2 = document.getElementById("a2");
+			select1.innerHTML = "<option>四川</option>";
+		}
+	</script>
 </body>
 </html>
