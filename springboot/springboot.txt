@@ -1,0 +1,70 @@
+springboot与springMVC没有必然联系，可以直接学习
+SpringBoot的特点:
+1.简化配置
+2.下一代框架
+3.入门级微框架
+
+
+前置:
+maven
+Spring注解
+RESTful API
+
+一.第一个SpringBoot程序
+	idea无脑是下一步创建
+二.自定义属性配置
+	src/main/resources/application.properties
+	需要配置的属性有:
+
+	返回jsp页面
+	1.旧版本springboot
+	#前缀，默认路径是src/main/webapp
+	spring.view.prefxi=/
+	#后缀
+	spring.view.suffix=.jsp
+	2.新版本
+	#前缀
+	spring.mvc.view.prefix=/
+	#后缀
+	spring.mvc.view.suffix.jsp
+
+	返回jsp依赖需要添加的额外依赖：
+	<!--解析jsp需要-->
+	<dependency>    
+		<groupId>org.apache.tomcat.embed</groupId>    
+		<artifactId>tomcat-embed-jasper</artifactId>    
+		<scope>provided</scope>
+	</dependency>
+	<!--jstl for spring boot 跳转到jsp一定需要这个jar包，否则跳转到jsp会变成下载模式-->
+	<dependency>    
+		<groupId>javax.servlet</groupId>    
+		<artifactId>jstl</artifactId>
+	</dependency>
+
+	返回jsp需要把spring-boot-starter-thymeleaf注释掉(个人本地并没有注释)
+
+
+	返回html页面
+	静态资源默认存放路径
+	css、js脚本：
+	src/main/resources/static
+	html页面：
+	src/main/resources/templates
+
+三.Controller的使用
+四.spring-data-jpa
+五.事务管理
+
+
+
+1.清晰的分析问题
+2.对于如何解决问题多思考几次
+3.收集完整的需求
+4.写下充分的实现计划（或模型）
+5.写好注释
+6.使用一致的命名习惯
+7.组织代码
+8.测试所有一切
+9练习、练习、练习
+10.为改变做好准备
+11.为了完成复杂的任务，开始的时候尽可能的简单

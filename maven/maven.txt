@@ -1,0 +1,14 @@
+****约定优于配置****
+****pom代表一个工程对象模型，是maven工作时的基本组件、是一个xml文件
+	   包含了关于工程和各种配置细节的信息，Maven使用这些信息构建工程
+
+hellomaven
+
+src
+	-main
+		-java
+			-package
+	-test
+		-java
+			-package
+	-resources(存放资源文件)

@@ -73,8 +73,8 @@
 		<h4>datalist与input结合使用</h4>
 		<input type="text" list="test" name="test">
 		<datalist id="test">
-			<option value="1"></option>
-			<option value="2"></option>
+			<option value="1">1</option>
+			<option value="2">2</option>
 		</datalist>
 		<br>
 		<h4>detalis使用</h4>
@@ -86,6 +86,7 @@
 		<h4>dialog使用</h4><!--添加open默认打开-->
 		<dialog>这是一个窗口</dialog>
 		<dialog open>这是一个窗口</dialog>
+		<p>&nbsp;
 		<h4>embed使用</h4>
 		<p>尝试连接百度<embed src="http://www.baidu.com" type="" width="800px" height="550px"></p>
 		<h4>表单学习</h4>
@@ -120,14 +121,14 @@
 			<p>
 				音量:
 				0<input type="range" value="50" id="yinliang" onchange="change()">100 
-				<span id="yinliangtest"></span>
+				<span id="yinliangtest">()</span>
 			</p>
 			<script>
 				function change(){
 					var test = document.getElementById("yinliangtest");
 					var input = document.getElementById("yinliang").value;
 					//alert(input);
-					test.innerHTML = input;
+					test.innerHTML = "("+input+")";
 					//alert(test.innerHTML);
 				}
 				
