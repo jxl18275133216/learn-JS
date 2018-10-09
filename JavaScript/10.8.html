@@ -112,11 +112,24 @@
 			var p3 = document.getElementById("p3");
 			if (isNaN(p)) {
 				p3.innerHTML = "不是数字";
+			}else if(p == '' || p == null){
+				p3.innerHTML = '不能为空'; 
 			}else{
 				p3.innerHTML = "是数字";
 			}
 		}
 	</script>
-	
+&nbsp;
+	<h3>异常处理</h3>
+	<button onclick="checkMessage()">查看消息</button>
+	<script type="text/javascript">
+		function checkMessage(){
+			try{
+				aleqasrt()
+			}catch(err){
+				alert(err)
+			}
+		}
+	</script>
 </body>
 </html>
