@@ -1,0 +1,40 @@
+1. 什么是Thymeleaf
+Thymeleaf 是一个跟 Velocity、FreeMarker 类似的模板引擎，它可以完全替代 JSP
+2.feature
+     有无网络皆可运行
+     开箱即用
+     提供了标准版和SpringMVC版
+3.文档
+     官方文档:http://www.thymeleaf.org/doc/tutorials/2.1/usingthymeleaf.html#what-is-thymeleaf
+     推荐教程:http://blog.didispace.com/springbootweb/
+                  http://blog.csdn.net/u012706811/article/details/52185345
+
+4.Demo
+	Demo看不到，别找了
+如上页面，直接打开html页面展现Hello World，但是启动程序后，访问http://localhost:8080/，则是展示Controller中host的值：http://www.sichuanair.com，做到了不破坏HTML自身内容的数据逻辑分离。
+5.标签
+5.1${}通过变量名.属性名获取值
+th:text="${name.value}"
+5.2@{}引入url
+th:href="@{//www.baidu.com}"          绝对路径
+th:href="@{/}"          #相对路径
+th:src="@{css/main.css}"          #访问的是static/css文件夹
+5.3运算
+th:with="${obj}%2" == 0          #
+5.4if/unless
+if表示条件满足就显示标签，unless表示条件不满足才显示标签
+<p th:href="@{/login}" th:if="${user} != null">111</p>
+5.5switch
+
+5.6循环
+
+5.7Unitles
+6.模板布局
+首先第一一个html文件
+在其他页面中的引用
+
+<div th:insert="common/fragment :: copy"></div>
+
+::前面的参数是模板文件的文件名，其路径相对于src/main/resource/templates
+::后的参数是th:fragment定义的值，即某个模板的id——一个模板文件中可以定义多个模板
+PS.新版本推荐使用insert和replace

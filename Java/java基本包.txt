@@ -1,0 +1,62 @@
+一.java.lang
+	java的核心类库，包含java运行必不可少的系统类，系统缺省加载
+    1.类型
+    	1.1Object
+    		java类的根类，所有类的超类
+    	1.2类
+    		class，Class对象在加载class的时候由JVM调用classLoader中的defineClass自动构造
+    		classLoader，加载类
+    		Compiler，编译器的占位符，不做任何事情，仅用来支持java到本地机代码的编译器及相关服务
+    	1.3基本类型
+    		基本类型包装类
+    	1.4字符序列
+    		Stringbuffer、StringBuilder
+    	1.5Enum
+    		所有枚举的公共类
+    	1.6packag
+    		包含有关java包的信息
+    	1.7void
+    		表示关键字void的Class对象的引用，不可被实例化
+    	1.8Iterable
+    		可迭代接口，实现接口可以使用迭代器进行对象遍历
+    2.系统
+    	2.1进程
+    		Process，进程抽象类
+    		ProcessBuilder，用于创建系统进程
+    		ProcessEnvironment，进程的运行环境参数
+    		ProcessImpl，进行接口的实现类
+    	2.2线程
+    		Thread，线程
+    		ThreadGroup，线程组
+    		ThreadLocal，提供线程变量
+    	2.3运行
+    		Runable、可运行接口，所有线程都必须实现它
+    		Runtime、运行时类，将应用程序与运行环境相关联
+    		RuntimePermission、运行时权限
+    		System
+    	2.4堆栈
+    		StackTraceElement、堆栈中的跟踪元素、他的每一个实例表示一个栈帧
+    	2.5异常
+    		Throwable，所有异常都继承它
+    3.工具
+    	3.1数字
+    		Math、StrictMath，提供基本数字操作
+    		一般情况下，Math调用StrictMath的方法来完成实现
+    		java.math包，该包提供用于执行任意精度的整数算法和任意精度的小数算法
+    	3.2安全
+    		SecuritManager，允许程序实现安全策略的类
+    	3.3注解
+==================================================================================================================
+接口							
+Appendable
+    					
+AutoCloseable				
+CharSequence				
+Cloneable					
+Comparable<T>				对实现该接口的类强制实行整体排序
+Iterable<T>					
+Readable					
+Runable						当某类需要通过线程执行的时候必须实现该类
+Thread.UncaughtExceptionHandler		当Thread因未捕获异常而突然中止时，调用处理程序的接口
+
+类

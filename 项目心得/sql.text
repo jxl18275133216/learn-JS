@@ -1,0 +1,8 @@
+ insert into userinfo (
+ 	user_name,
+ 	user_pwd,
+ 	user_bir,
+ 	user_per,
+ 	user_dep) 
+ 	values
+ 	("jiashunhao","123456",date_format("1988-03-04","%Y-%m-%d"),"theRoot","T0");

@@ -1,0 +1,392 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8" http-equiv="refresh" content="30">
+	<script>
+		function changeP1(){
+			var p1 = document.getElementById("test p1");
+			if(p1.innerHTML=="测试用段落,点击修改"){
+				p1.innerHTML="内容已修改";
+			}else if(p1.innerHTML=="内容已修改"){
+				p1.innerHTML="我又变了";
+			}else{
+				p1.innerHTML="你来打我啊";
+			}
+			
+		}
+		//测试var与let,我去
+		function letAndVar(){
+			let a = 1;
+			if(true){
+				let a = 2;
+				alert(a);//输出 2
+			}
+			alert(a);//输出1
+		}
+		//点击获取当前事件
+		function getDate(){
+			var date = document.getElementById("datedemo");
+			date.innerHTML = Date();
+		}
+	</script>
+	<title>JS练习用</title>
+</head>
+<body>
+	<p id="test p1">测试用段落,点击修改</p>
+	<input type="button" id="test b1" onclick="changeP1()" value="点击">
+	<br>
+	<h4>测试var 和 let 的区别</h4>
+	<button onclick="letAndVar()">点击测试</button>
+	<h4>测试单击事件,获取当前时间</h4>
+	<button onclick="getDate()">现在时间是:</button>
+	<p id="datedemo"></p>
+	<h4>JS事件</h4>
+	<h4>单击事件</h4>
+	<h4>鼠标右键事件</h4>
+	<div id="div1" style="width:200px;height:200px;background:yellow" oncontextmenu="div1()">
+		<p>在该区域点鼠标右键</p>
+	</div>
+	<script>
+		function div1(){
+			//alert('你在div区域点击了鼠标右键');
+			var div1 = document.getElementById('div1');
+			div1.style.backgroundColor= "red";
+		}
+	</script>
+	<h4>鼠标移动事件一</h4>
+	<div id="div2" style="width:200px;height:200px;background:yellow" onmouseenter="into()" onmouseleave="outo()">
+		<p>在该区域进行鼠标移进移出操作</p>
+	</div>
+	<script>
+		function into(){
+			//alert("鼠标移进");
+			var div2 = document.getElementById("div2");
+			div2.style.backgroundColor="red";
+		}
+		function outo(){
+			//alert(111111111);
+			var div2 = document.getElementById("div2");
+			div2.style.backgroundColor="yellow";
+		}
+	</script>
+	<h4>鼠标移动事件二</h4>
+	<div id="div3" style="width:200px;height:200px;background:yellow" onmousemove="theMove(this)">
+		<p>在该区域进行鼠标移动操作</p>
+	</div>
+	<script>
+		function theMove(event){
+			//alert("鼠标移动");
+			event.style.backgroundColor="red";
+		}
+	</script>
+	<h4>标签的使用</h4>
+	<script>
+		outerloop:
+		for(var i = 0;i<10;i++){
+			
+			innerloop:
+			for(var j = 0;j<10;j++){
+				if(j==2){
+					continue innerloop;
+				}
+				if(j==4){
+					break innerloop;
+				}
+				if(i>6){
+					break outerloop;
+				}
+				document.write("i="+i+";j="+j+"<br/>");
+			}
+			document.write("i="+i+"<br/>");
+		}
+	</script>
+	<h4>
+		演示if...else if的运用
+	</h4>
+	<script>
+		var day = new Date();
+		var time = day.getHours();
+		//alert(time);
+		if(time<=9){
+			document.write("早上好");
+		}else if(time>9&&time<17){
+			document.write("中午好");
+		}else{
+			document.write("下午好");
+		}
+	</script>
+	<h4>演示switch case</h4>
+	<span>今天是<p id="swtichtest"></p></span>
+	<script>
+		var day = new Date();
+		var today = day.getDay();
+		var span = document.getElementById("swtichtest");
+		//alert(today);
+		switch(today){
+			case 0:
+				span.innerHTML = "星期天";
+				break;
+				
+			case 1:
+				span.innerHTML = "星期一";
+				break;
+			case 2:
+				span.innerHTML = "星期二";
+				break;
+			case 3:
+				span.innerHTML = "星期三";
+				break;
+			case 4:
+				span.innerHTML = "星期四";
+				break;
+			case 5:
+				span.innerHTML = "星期五";
+				break;
+			case 6:
+				span.innerHTML = "星期六";
+				break;
+		}
+	</script>
+	<h4>
+		测试年龄
+	</h4>
+	<p>输入你的出生年份:<input type="text" id="datetest"></p>
+	<p><button onclick="brithday()">开始计算</button></p>
+	你今年已经<input id="result"></input>
+	<script>
+		var p1 = document.getElementById("datetest");
+		var p2 = document.getElementById("result");
+		function brithday(){
+			var date = new Date();
+			var brithday = date.getFullYear()-p1.value;
+			//alert(date.getFullYear());
+			//alert(brithday);
+			p2.value = brithday+"岁";	
+		}
+	</script>
+	<h4>演示try...catch</h4>
+	<button onclick="errortest()">点击显示</button>
+	<script>
+		function errortest(){
+			try{
+				alerttttttt("test  error");
+			}catch(error){
+				alert(error.message);
+			}
+		}
+	</script>
+	<h4>throw控制流程</h4>
+	<input type="text" value="输入一个0-100的值" id="input">
+	<br>
+	<button onclick="test()">测试</button>
+	<br>
+	<p id="test1"></p>
+	<script>
+		function test(){
+		//alert(11111);
+			var input = document.getElementById("input").value;
+			alert(input);
+			var p = document.getElementById("test1");
+			p.innerHTML = "";
+			//p.innerHTML = "111111111111";
+			try{
+				if(input=="")throw "空的";
+				if(isNaN(input))throw "不是数字";
+				input=Number(input);
+				if(input<0)throw "小了";
+				if(input>100)throw "大了";
+			}catch(error){
+				p.innerHTML = error;
+			}
+		}
+	</script>
+	<h4>JS函数</h4>	
+	<p id="demo1"></p>
+	<script>
+		var p =document.getElementById("demo1");
+		var x = function(a,b){return a*b};
+		p.innerHTML = x(1,4,3,1);
+	</script>
+	<h4>JS创建对象之一</h4>
+	<script>
+		var person= new Object();
+		person.name="jiashuai";
+		person.sex="man";
+		person.age="30";
+		//alert(person);
+		document.write(person.name+person.sex+person.age);
+	</script>
+	<h4>JS创建对象之二</h4>
+	<script>
+		function person(name,sex,age){
+			this.name = name;
+			this.sex = sex;
+			this.age = age;
+		}
+		var boy = new person("jiashuai","boy","30");
+		var gril = new person("nvshen","gril","20");
+		console.log(boy+gril);
+		//alert(boy);
+	</script>
+	<h4>for...in循环</h4>
+	<script>
+		var person = {name:"jiashuai",sex:"boy",age:"30"};
+		var txt = "";
+		for(x in person){
+			txt += person[x];
+		}
+		document.write(txt);
+	</script>
+	
+	<h4>数组对象</h4>
+	<script>
+		var array = new Array();
+		array[0] = new Date();
+		array[1] = "";
+		array[2] = 123;
+		array[3] = null;
+		for(i in array){
+			document.write(array[i]+"<br>");
+		}
+	</script>
+	<h4>下拉框</h4>
+	<select name="" id="a1" onchange="addOption()">
+		<option value="">选择省份</option>
+	</select>
+	<select name="" id="a2">
+		<option value="">选择城市</option>
+	</select>
+	<script>
+		var 四川 = new Array("成都","南充","绵阳");
+		var 北京 = ["北狗","京狗","北京狗"];
+		function addOption(){
+			var select1 = document.getElementById("a1");
+			var select2 = document.getElementById("a2");
+			select1.innerHTML = "<option>四川</option>";
+		}
+	</script>
+	<h3>几个浏览器对象</h3>
+	<h4>screen对象</h4>
+	<button id="demoscreen" onclick="DemoScreen()">点击出现screen对象事件</button>
+	<script>
+		function DemoScreen(){
+			var screen = document.getElementById("demoscreen");
+			alert("当前屏幕宽度:"+window.screen.availWidth+"\n当前屏幕高度:"+window.screen.availHeight);
+		}
+	</script>
+	<h4>location对象</h4>
+	<button id="DemoLocation" onclick="DemoLocation()">点击出现location对象事件</button>
+	<script>
+		function DemoLocation(){
+			var location = document.getElementById('DemoLocation');
+			alert('WEB主机域名:'+window.location.hostname+'\n当前页面的路径:'+window.location.pathname+'\n当前页面的URL:'+window.location.href);
+		}
+	</script>
+	<h4>history对象</h4>
+	<button id="DemoHistory" onclick="DemoBack()">上一个页面</button>
+	<button id="DemoHistory" onclick="DemoForward()">下一个页面</button>
+	<script>
+		function DemoBack(){
+			window.history.back();
+		}
+		function DemoForward(){
+			window.history.forward();
+		}
+	</script>
+	<h3>弹窗</h3>
+	<h4>警告框alert</h4>
+	<button id='DemoAlert' onclick='DemoAlert()'>警告框</button>
+	<script>
+		function DemoAlert(){
+			alert('你好,这是警告框!')
+		}
+	</script>
+	<h4>确认框confirm</h4>
+	<button id='DemoConfirm' onclick='DemoConfirm()'>警告框</button>
+	<script>
+		function DemoConfirm(){
+			var x = confirm('TO BE OR NOT TO BE');
+			if(x==true){
+				alert('YES');
+			}else{
+				alert('???');
+			}
+		}
+	</script>
+	<h4>提示框</h4>
+	<button id='DemoPrompt' onclick='DemoPrompt()'>提示框</button>
+	<script>
+		function DemoPrompt(){
+			var x = prompt('你渴望什么');
+			alert(x+'?我TM也想要!');
+		}
+	</script>
+	<h3>计时器事件</h3>
+	<h4>setInterval</h4>
+	<p id='DemoSetInterval'> </p>
+	<button id='goTime' onclick='GoTime()'>开始</button>
+	<button id='stopTime' onclick='StopTime()'>停止</button>
+	<script>
+		var myTime;
+		function GoTime(){
+			myTime = window.setInterval(function(){
+				var time = new Date();
+				var x = time.toLocaleTimeString();
+				var p =document.getElementById('DemoSetInterval');
+				p.innerHTML = x;
+			},1000);
+		}
+		function StopTime(){
+			clearInterval(myTime);
+		}
+	</script>
+	<h4>setTimeout</h4>
+	<p id='DemoSetTimeout'></p>
+	<button id='' onclick='sendE()'>发送</button>
+	<button id='' onclick='stopE()'>中断</button>
+	<script>
+		/*var myE;
+		function sendE(){
+			myTime = window.setTimeout(function(){
+				var p =document.getElementById('DemoSetTimeout');
+				p.innerHTML = '邮件发送成功';
+			},5000);
+		}
+		function stopE(){
+			clearTimeout(myE);
+			var p =document.getElementById('DemoSetTimeout');
+				p.innerHTML = '邮件终止发送';
+		}*/
+		//下面这个不需要中断按钮
+		function sendE(){
+			var x = confirm('正在发送邮件,是否中止...');
+			var p = document.getElementById('DemoSetTimeout');
+			if(x == false){
+				setTimeout(function(){
+					p.innerHTML = '已发送';	
+				},5000);
+			}else{
+				p.innerHTML = '已中止';
+			}
+		}
+		
+		
+		
+	</script>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+</body>
+</html>

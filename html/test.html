@@ -1,0 +1,177 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8" http-equiv="refresh" content="30">
+	<script>
+		function doSome(){
+			var cs = document.getElementById("cejiaoben");
+			if(cs.innerHTML=="脚本的使用简易例子"){
+				cs.innerHTML = "JAVA SCRIPT";
+			}else if(cs.innerHTML == "JAVA SCRIPT"){
+				cs.innerHTML = "脚本的使用简易例子";
+			}else{
+				alert("STOP!");
+			}
+			
+		}
+	</script>
+	<style type="text/css">
+		a{
+			color:red
+		}
+	</style>
+	<title>html-test</title>
+</head>
+<body>
+	<h1>HTML学习</h1>
+		<!--不同样式的有序列表-->
+		<h4>不同样式的有序列表</h4>
+		<h5>默认样式</h5>
+		<ol>
+			<li>1</li>
+			<li>2</li>
+		</ol>
+		<h5>大写字母</h5>
+		<ol type="A">
+			<li>1</li>
+			<li>2</li>
+		</ol>
+		<h5>小写字母</h5>
+		<ol type="a">
+			<li>1</li>
+			<li>2</li>
+		</ol>
+		<h5>大写罗马字母</h5>
+		<ol type="I">
+			<li>1</li>
+			<li>2</li>
+		</ol>
+		<h5>小写罗马字母</h5>
+		<ol type="i">
+			<li>1</li>
+			<li>2</li>
+		</ol>
+		<!--不同样式的无序列表-->
+		<h4>不同样式的无序列表</h4>
+		<h5>默认小圆点</h5>
+		<ul style="">
+			<li>1</li>
+			<li>2</li>
+		</ul>
+		<h5>圆圈</h5>
+		<ul style="list-style-type:circle">
+			<li>1</li>
+			<li>2</li>
+		</ul>
+		<h5>方块</h5>
+		<ul style="list-style-type:square">
+			<li>1</li>
+			<li>2</li>
+		</ul>
+		<a name="test">中间锚点</a>
+		<br>
+		<h4>datalist与input结合使用</h4>
+		<input type="text" list="test" name="test">
+		<datalist id="test">
+			<option value="1">1</option>
+			<option value="2">2</option>
+		</datalist>
+		<br>
+		<h4>detalis使用</h4>
+		<details open><!--添加一个open属性，细节会默认打开-->
+			<summary>总结性的标题</summary>
+			<p>该内容是补充细节</p>
+			<p>如果detalis中设置了open属性，会默认打开</p>
+		</details>
+		<h4>dialog使用</h4><!--添加open默认打开-->
+		<dialog>这是一个窗口</dialog>
+		<dialog open>这是一个窗口</dialog>
+		<p>&nbsp;
+		<h4>embed使用</h4>
+		<p>尝试连接百度<embed src="http://www.baidu.com" type="" width="800px" height="550px"></p>
+		<h4>表单学习</h4>
+		<fieldset>
+			<legend>表单学习</legend>
+			<form action="http://www.baidu.com" method="post">
+			<p>
+			账户:
+			<input type="text" list="test1" name="test1">
+			<datalist id="test1">
+				<option value="jxl"></option>
+				<option value="jsh"></option>
+			</datalist>	
+			</p>
+			<p>
+				密码:
+				<input type="password">
+			</p>
+			<p>
+				性别:
+				
+				<input type="radio" name="sex" id="nan">
+				<label for="nan">男</label><!--辅助标签-->
+				
+				<input type="radio" name="sex" id="nv">
+				<label for="nv">女</label>
+			</p>
+			<p>
+				年龄:
+				<input type="number" value="20" min="18" max="100">
+			</p>
+			<p>
+				音量:
+				0<input type="range" value="50" id="yinliang" onchange="change()">100 
+				<span id="yinliangtest">()</span>
+			</p>
+			<script>
+				function change(){
+					var test = document.getElementById("yinliangtest");
+					var input = document.getElementById("yinliang").value;
+					//alert(input);
+					test.innerHTML = "("+input+")";
+					//alert(test.innerHTML);
+				}
+				
+			</script>
+			<p>
+				兴趣:
+				<input type="checkbox" name="interesting">吃
+				<input type="checkbox" name="interesting">睡
+				<input type="checkbox" name="interesting">玩
+			</p>
+			<p>
+				所在地:
+				<select name="" id="">
+					<optgroup label="四川">
+						<option value="ctu">CTU</option>
+						<option value="NC">NC</option>
+					</optgroup>
+					<optgroup label="北京">
+						<option value="PEK">PEK</option>
+						<option value="CY">CY</option>
+					</optgroup>
+				</select>
+			</p>
+			<p>
+				备注:
+				<textarea name="" id="" cols="30" rows="10"></textarea>
+			</p>
+			<p>
+				所在地:
+				<input type="">
+			</p>
+			<p><input type="reset"></p>
+			<p><input type="submit"></p>
+		</form>
+		</fieldset>
+		<h4>iframe例子</h4>
+		<iframe src="www.baidu.com" frameborder="0" name="testiframe"></iframe>
+		<a href="http://www.baidu.com" target="testiframe">www.baidu.com</a>
+		<br>
+		<a href="#test">返回中间锚点</a>
+		<br>
+		<h4 id="cejiaoben">脚本的使用简易例子</h4>
+		<p><button type="button" onclick="doSome()">点击就送</button></p>
+		<a href="#top" style="text-decoration:none">返回顶部</a>
+</body>
+</html>

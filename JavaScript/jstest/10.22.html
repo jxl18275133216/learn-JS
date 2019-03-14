@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>10.22</title>
+</head>
+<body>
+	<h3>cookie</h3>
+	<script type="text/javascript">
+		window.onload = function() {
+			// body...
+			try{
+				checkCookie();
+			}catch(err){
+				alert(err)
+			}
+		}
+		function checkCookie(){
+			console.log('checkCookie');
+			var username = getCookie("username");
+			if (username != null && username != '') {
+				console.log('username is not null');
+				alert("Welcome again "+ username);
+			} else {
+				console.log('username is null');
+				username = prompt("What's u name?",'');
+				if (username != null && username != '') {
+					setCookie("username",username,1);
+				} else {
+
+				}
+			}
+		}
+		function getCookie(c_name){//字符串截取方式来获取cookie的值
+			console.log('getCookie');
+			if (document.cookie.length > 0) {
+				console.log('cookie is not null');
+				var c_start = document.cookie.indexOf(c_name + "=");
+				if (c_start != -1) {//c_name存在
+					c_start = c_start + c_name.length+1;
+					var c_end = document.cookie.indexOf(";",c_start);
+					if(c_end == -1)c_end = document.cookie.length;
+					console.log('c_start = '+ c_start);
+					console.log('c_end = '+ c_end);
+					var c_value = document.cookie.substring(c_start,c_end);
+					return c_value;//unescape()解码
+				} else {
+					console.log('cookie is null');
+				}
+			} else {
+				return "";
+			}
+		}
+		function setCookie(c_name,c_value,c_expires){
+			console.log('setCookie');
+			//设置过期时间
+			var date = new Date();			
+			console.log('date = '+date.toUTCString());
+			if (c_expires == null || c_expires == '') {
+				date.setDate(date.getDate() + 365);
+			} else {
+				date.setDate(date.getDate() + c_expires);
+			}
+			console.log('date = '+date.toUTCString());
+			//设置cookie
+			console.log('c_name = '+ c_name+';c_value = '+ c_value);
+			document.cookie = c_name+'='+c_value+';expires =' + date.getDate(); //过期时间转换为格林尼治时间
+			console.log(document.cookie.length);
+			console.log(document.cookie);
+		}
+	</script>
+</body>
+</html>

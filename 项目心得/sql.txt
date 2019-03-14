@@ -1,0 +1,26 @@
+本地mysql:
+	账号:root
+	密码:123456
+mysql 8.0使用低版本的可视化工具需要做如下操作
+ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password BY 'password';//修改加密方式并修改密码
+
+CREATE TABLE usermain  (
+  `user_id` int(10) NOT NULL AUTO_INCREMENT COMMENT 'user_id,不可重复',
+  `user_name` varchar(10) CHARACTER SET utf8 NOT NULL COMMENT '可重复',
+  `user_pwd` varchar(16) CHARACTER SET utf8 NOT NULL COMMENT '可重复',
+  PRIMARY KEY (`user_id`)
+);
+
+
+
+插入一条数据
+insert into usermain (user_name,user_pwd) value ("jxl182","123456");
+insert into usermain (user_name,user_pwd) value ("jxl751","123456");
+
+
+mysql
+	日期转换
+	date_format(date,'%y-%m-%d')
+
+切换时区
+set global time_zone = '+8:00';

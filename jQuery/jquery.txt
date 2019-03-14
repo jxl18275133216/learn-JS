@@ -1,0 +1,44 @@
+显示隐藏集中方式:
+	1.$("#id").hide()——隐藏
+	  $("#id").show()——显示
+	2.$("#id").toggle()——切换
+	3.$("#id").css("display","none")
+	  $("#id")[0].style.display = none;
+	4.
+
+设置class
+	$("#id").addClass("class").removeClass("class");
+radio
+	1.获取值
+	$("input[name='name']:checked").val()
+	$('input:radio:checked').val()
+	$('input[type="radio"]:checked').val()
+	$(':radio[checked]').each(function(radio){alert($(this).val())})
+	2.设置第一个选中
+	3.设置最后一个选中
+	4.根据索引设置任意一个选中
+	5.根据value值设置选中
+	6.删除value为2的
+	7.删除第几个radio
+	8.遍历radio
+	9.修改单选框样式
+
+焦点事件
+	获取焦点
+	$("#id").foucs();
+	失去焦点
+	$("#id").blur();
+
+scroll() 监听鼠标滚动事件
+
+获取元素坐标
+ 绝对坐标
+ offset().top元素最底下Y轴坐标
+ offset().left元素最左侧X轴坐标
+ 相对坐标，相对父元素的坐标
+ position().width()
+ position().height()
+
+ jQuery(window).height(); 浏览器可见区域高度
+ jQuery(window).scrollTop();鼠标滚动高度
+ jQuery(document).height();文档高度

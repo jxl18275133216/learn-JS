@@ -1,0 +1,57 @@
+<!-- mybatis generator 自动生成代码插件 -->
+
+mysql8.0对时区有要求，需要修改数据库的时区，保证和本地时区一致
+
+用application.yml代替application.properties
+
+mybatis:
+  #当mybatis的xml文件和mapper接口不在相同包下时，需要用mapperLocations属性指定xml文件的路径。
+  # *是个通配符，代表所有的文件，**代表所有目录下
+  #classpath:后面的路径应该是
+  mapper-locations: classpath:mapping/*.xml
+  type-aliases-package: com.jxl.shabby_2
+
+
+1.classpath：只会到你的class路径中查找找文件。
+2.classpath*：不仅包含class路径，还包括jar文件中（class路径）进行查找。
+3.程序部署到tomcat后，src目录下的配置文件会和class文件一样，自动copy到应用的WEB-INF/classes目录下；classpath:与classpath*:的区别在于，前者只会从第一个classpath中加载，而 后者会从所有的classpath中加载。
+4如果要加载的资源，不在当前ClassLoader的路径里，那么用classpath:前缀是找不到的，这种情况下就需要使用classpath*:前缀。
+5.在多个classpath中存在同名资源，都需要加载时，那么用classpath:只会加载第一个，这种情况下也需要用classpath*:前缀。
+
+
+
+dao层使用@Mapper
+service层@Service @Autowired
+controller层@RestController或者@Controller
+以上注解不可遗漏
+
+mybatis中:
+	映射文件中的namespace是用于绑定Dao接口的，即面向接口编程。
+	当namespace绑定接口后，可以不用写接口实现类，mybatis会通过该绑定自动帮你找到对应要执行的SQL语句
+
+controller
+	注解
+	
+entity
+	变量使用privat
+
+@Service
+
+@Autowired
+	自动装配
+@Resource
+
+@RestController
+	=@Controller + @ResponseBody
+	1) 如果只是使用@RestController注解Controller，则Controller中的方法无法返回jsp页面，或者html，配置的视图解析器 InternalResourceViewResolver不起作用，返回的内容就是Return 里的内容。
+	2) 如果需要返回到指定页面，则需要用 @Controller配合视图解析器InternalResourceViewResolver才行。
+	3)如果需要返回JSON，XML或自定义mediaType内容到页面，则需要在对应的方法上加上@ResponseBody注解。
+
+
+
+
+dao层通过mapping.xml往数据库读写数据
+
+services处理业务逻辑
+
+impl实现某个方法

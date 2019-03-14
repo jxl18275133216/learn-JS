@@ -26,7 +26,7 @@ RESTful API
 	#前缀
 	spring.mvc.view.prefix=/
 	#后缀
-	spring.mvc.view.suffix.jsp
+	spring.mvc.view.suffix=.jsp
 
 	返回jsp依赖需要添加的额外依赖：
 	<!--解析jsp需要-->
@@ -46,10 +46,13 @@ RESTful API
 
 	返回html页面
 	静态资源默认存放路径
+	静态资源在springboot下是默认存放在static public、resources或者/META-INF/resources下
+	例如：
+		设置跳转静态页面路径是index.html时候，springboot会自动在static public、resources或者/META-INF/resources下自动查找静态资源
 	css、js脚本：
 	src/main/resources/static
 	html页面：
-	src/main/resources/templates
+	src/main/resources/pages
 
 三.Controller的使用
 四.spring-data-jpa
@@ -68,3 +71,16 @@ RESTful API
 9练习、练习、练习
 10.为改变做好准备
 11.为了完成复杂的任务，开始的时候尽可能的简单
+
+
+
+
+
+
+注解
+@Controller
+@Scope
+@Service
+	对应业务层的bean
+	@Service("userService")注解是告诉Spring，当Spring要创建UserServiceImpl的的实例时，bean的名字必须叫做"userService"，这样当Action需要使用UserServiceImpl的的实例时,就可以由Spring创建好的"userService"，然后注入给Action：在Action只需要声明一个名字叫“userService”的变量来接收由Spring注入的"userService"即可
+

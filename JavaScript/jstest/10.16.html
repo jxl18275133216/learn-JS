@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>10.16</title>
+</head>
+<body>
+	<h3>DOM 和 window对象</h3>
+	<h4>DOM对象</h4>
+&nbsp;
+	<h4>window对象</h4>
+	<button id="source" onclick="opener()">源窗口</button><br>
+	<button id="open" onclick="openBOM()">打开新窗口</button><br>
+	<button id="closeW" onclick="closeW()">关闭窗口</button>
+	<script type="text/javascript">
+		function opener(){
+			window.open(window.opener);//
+		}
+		function openBOM(){
+			window.open('http://www.baidu.com','_blank');//参数以是地址、参数二是打开的方式、参数三是控制打开窗口的格式
+														 //open方法有返回值，返回值为新打开的窗口		
+		}
+		function closeW(){
+			window.close()
+		}
+	</script>
+&nbsp;
+	<h3>window.screen</h3>
+	<div style="border:solid black 1px;width: 300px;height: 100px" onmouseenter="show()" onmouseout="clearAll()">
+		<p>screen高度:<span id="spanH"></span></p>
+		<p>screen宽度:<span id="spanW"></span></p>
+	</div>
+	<script type="text/javascript">
+		var h = document.getElementById('spanH')
+		var w = document.getElementById('spanW')
+		function show(){
+			h.innerHTML = screen.availHeight
+			w.innerHTML = screen.availWidth
+		}
+		function clearAll(){
+			h.innerHTML = ''
+			w.innerHTML = ''
+		}
+	</script>
+&nbsp;
+	<h3>window.location</h3>
+	<div>
+		<p><button onclick="getURL()">获取</button></p>
+		<p id="showURL"></p>
+		<p><button onclick="newDoc()">加载新文档</button></p>
+		<p id="newDoc"></p>
+	</div>
+	<script type="text/javascript">
+		function getURL(){
+			var p = document.getElementById('showURL')
+			p.innerHTML = 'url:'+location.href+'<br>'
+						  +'PathName:'+location.pathname+'<br>'
+						  +'hostname:'+location.hostname+'<br>'
+						  +'port:'+location.port+'<br>'
+						  +'protocal:'+location.protocal+'<br>'
+		}
+		function newDoc(){
+			let p = document.getElementById('newDoc')
+			p.innerHTML = location.assign('http://www.baidu.com')
+		}
+	</script>
+&nbsp;
+	<h3>提示框</h3>
+	<button onclick="showAlert()">警告框</button><br>
+	<button onclick="showConfirm()">确认框</button><br>
+	<button onclick="showPrompt()">提示框</button><br>
+	<button></button><br>
+	<script type="text/javascript">
+		function showAlert(){
+			alert('警告框')
+		}
+		function showConfirm(){
+			var mess = confirm('百度吗?')
+			if(mess == true){
+				window.open('http://www.baidu.com','_blank')
+			}else{
+				alert('结束了，confirm返回值:'+mess)
+			}
+		}
+		function showPrompt(){
+			var mess = prompt('需要百度吗?','')//第一个参数是文本，第二个参数是输入框的默认值
+			if(mess == 'yes'){
+				alert('mess:'+mess)
+				open('http://www.baidu.com')
+			}else{
+				alert('结束，prompt返回值:'+mess)
+			}
+		}
+	</script>
+	<h3>计时 setTimeout()</h3>
+	<p><button onclick="startTime()">开始</button><input type="" name="" id="setTime"><button onclick="endTime()">停止</button></p>
+	<script type="text/javascript">
+		//声明一个参数，赋值计时器
+		var timeID
+		//声明一个参数，计时
+		var c = 0
+		function startTime(){
+			document.getElementById('setTime').value = c
+			c += 1
+			timeID = setTimeout('startTime()',1000);  //每过一秒执行一次自己
+		}
+		function endTime(){
+			document.getElementById('setTime').value = 0
+			c = 0 //将c值还原
+			clearTimeout(timeID) //停止计时器
+		}
+	</script>
+&nbsp;
+	<h3>setInterval</h3>
+	<p><button onclick="startInterval()">开始</button><input type="" name="" id="theInterval" value=""><button onclick="stopInterval()">停止</button></p>
+	<script type="text/javascript">
+		var c = 1
+		var intervalID
+		function startInterval(){
+			intervalID = setInterval(function(){
+				var d = document.getElementById('theInterval');
+				d.value = c
+				c += 1
+			},1000);
+		}
+		function stopInterval(){
+			try{
+				c = 1
+			document.getElementById('theInterval').value = ''
+			clearInterval(intervalID)
+			}catch(err){alert(err)}
+		}
+	</script>
+</body>
+</html>

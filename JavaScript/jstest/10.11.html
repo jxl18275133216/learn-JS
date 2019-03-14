@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>10.11</title>
+	<style type="text/css">
+		a {
+			text-decoration-line: none;
+		}
+	</style>
+</head>
+<body>
+	<h3>JavaScript对象实例</h3>
+	<p>创建对象</p>
+	名字:<input type="" name="" id="name"><br/>
+	年龄:<input type="" name="" id="age"><br/>
+	性别:<input type="" name="" id="gender"><br/>
+	<a href="#" id="demo">创建</a><br/>
+	<p id="result"></p>
+	<script type="text/javascript">
+		window.onload = function(){
+			var a = document.getElementById('demo');
+			a.onclick = function(){
+				//获取值
+				var input = document.getElementsByTagName('input');
+				var name = input[0].value;
+				var age = input[1].value;
+				var gender = input[2].value;
+				console.log(name,age,gender);
+				//创建对象
+				var human = new person(name,age,gender);
+				console.log(human);
+				//输出
+				var p = document.getElementById('result');
+				p.innerHTML = forIn(human);
+
+			}
+		}
+		//对象构造函数
+		function person(e1,e2,e3){
+			this.name = e1;
+			this.age = e2;
+			this.gender = e3;
+		}
+		//for...in循环函数
+		function forIn(e){
+			var txt = '';
+			for(x in e){
+				txt = txt + e[x];
+				console.log(x);
+			}
+			return txt;
+		}
+
+	</script>
+&nbsp;
+	<h3>数字类型</h3>
+	<p>创建数字对象</p>
+	<p><input type="" name="" id="Num"></p>
+	<a href="#" onclick="returnObject()">返回对象</a>
+	<a href="#" onclick="returnValue()">返回值</a>
+	<p id="numberRS"></p>
+	<script type="text/javascript">
+		var v = document.getElementById('Num')
+		var p = document.getElementById('numberRS');
+		function returnObject(){
+			console.log(v)
+			p.innerHTML = '返回对象:'+new Number(v.value);
+		} 
+		function returnValue(){
+			console.log(v)
+			console.log(v.value)
+			p.innerHTML = '返回值:'+Number(v.value);
+		}
+	</script>
+&nbsp;
+	<h3>字符串(暂略)</h3>
+	<h3>日期</h3>
+	当前时间:<p id="nowDate"></p>
+	<script type="text/javascript">
+		window.onload = setInterval(function(){
+			var today = new Date()
+			var h = today.getHours()
+			var m = today.getMinutes()
+			var s = today.getSeconds();
+			h = addZero(h);
+			m = addZero(m);
+			s = addZero(s);
+			document.getElementById('nowDate').innerHTML = h+':'+m+':'+s;
+		},1000)
+		function addZero(e){
+			if(e<10){
+				e = '0'+e
+			}
+			return e;
+		}
+	</script>
+&nbsp;
+	<h3>数组</h3>
+&nbsp;
+	<h3>逻辑</h3>
+&nbsp;
+	<h3>浏览器对象模型</h3>
+	<div style="height: 80px;width: 150px;border: 1px solid black;" id="showS" onmouseenter="showSize()" onmouseout="clearAll()">
+		<p id="ph">高度:</p>
+		<p id="pw">宽度:</p>
+	</div>
+	<script type="text/javascript">
+		function showSize(){
+			document.getElementById('ph').innerHTML = '高度:'+window.innerHeight
+			document.getElementById('pw').innerHTML = '宽度:'+window.innerWidth
+		}
+		function clearAll(){
+			document.getElementById('ph').innerHTML = '高度:'
+			document.getElementById('pw').innerHTML = '宽度:'
+			window.resizeTo(1100,1100);
+		}
+	</script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
