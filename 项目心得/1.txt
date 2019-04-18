@@ -17,7 +17,7 @@ mybatis:
 3.程序部署到tomcat后，src目录下的配置文件会和class文件一样，自动copy到应用的WEB-INF/classes目录下；classpath:与classpath*:的区别在于，前者只会从第一个classpath中加载，而 后者会从所有的classpath中加载。
 4如果要加载的资源，不在当前ClassLoader的路径里，那么用classpath:前缀是找不到的，这种情况下就需要使用classpath*:前缀。
 5.在多个classpath中存在同名资源，都需要加载时，那么用classpath:只会加载第一个，这种情况下也需要用classpath*:前缀。
-
+6.mapper中书写的时候，以及前端将参数注入bean中时，使用相同的参数名，springboot会自动注入到bean中
 
 
 dao层使用@Mapper
@@ -29,8 +29,10 @@ mybatis中:
 	映射文件中的namespace是用于绑定Dao接口的，即面向接口编程。
 	当namespace绑定接口后，可以不用写接口实现类，mybatis会通过该绑定自动帮你找到对应要执行的SQL语句
 
-controller
+@Controller
 	注解
+@RequestMapping
+	一个用来处理请求地址映射的注解，可用于类或方法上。用于类上，表示类中的所有响应请求的方法都是以该地址作为父路径。
 	
 entity
 	变量使用privat
@@ -55,3 +57,6 @@ dao层通过mapping.xml往数据库读写数据
 services处理业务逻辑
 
 impl实现某个方法
+
+
+level是mysql的关键字，尽量别使用，若使用了，须得用··括起来
