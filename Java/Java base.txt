@@ -1,0 +1,3 @@
+write onec/run anywhere
+
+源代码(.java)——>编译器——>(.class)——>jvm运行
